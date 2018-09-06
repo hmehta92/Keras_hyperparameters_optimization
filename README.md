@@ -1,6 +1,15 @@
 # Keras_hyperparameters_optimization
-Used Hyperopt to tune hyperparameters of Keras binary classifier
-# Requisite packages would be 
+
+Neural network has a lot of hyperparameters, therefore tuning them might take a lot of time using GridSearchCV. Sequential based model optimizations are developed to reduce this problem. Different algorithms like Bayesian, tree structured parze estimator and sequential model based configuration have been developed. Following articles might be useful:
+https://arimo.com/data-science/2016/bayesian-optimization-hyperparameter-tuning/
+https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f
+
+Here, I used Hyperopt to tune hyperparameters of Keras binary classifier. To read about Hyperopt, check these link:
+https://github.com/WillKoehrsen/hyperparameter-optimization/blob/master/Bayesian%20Hyperparameter%20Optimization%20of%20Gradient%20Boosting%20Machine.ipynb
+
+https://github.com/hyperopt/hyperopt/wiki/FMin
+
+**Requisite packages would be**
 import random
 import csv
 from hyperopt import STATUS_OK
@@ -23,10 +32,10 @@ from keras.models import Sequential
 from keras import optimizers
 from numpy.random import seed
 seed(7)
-# Required two variables X (dataset), Y(Target Variables)
+**Required two variables X (dataset), Y(Target Variables)**
 Will split data into training and hold out set. performance on hold out set will be optimized to tune hyperparameters of Keras binary classifier. Used (1- Fscore(on Holdout)) as the loss function. *This can be changed*. 
 
-# Hyperparameters which are tuned:
+**Hyperparameters which are tuned**:
 Optimizer (including their learning rate, momentum), neurons in each layer,activation function, batch_size, epochs, bias
 
-# save results of optimization process in a csv file
+**save results of optimization process in a csv file**
